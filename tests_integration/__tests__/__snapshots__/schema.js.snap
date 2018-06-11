@@ -48,6 +48,11 @@ This option cannot be used with --range-start and --range-end.",
           "description": "Specify the input filepath. This will be used to do parser inference.",
           "type": "string",
         },
+        "functionParenSpace": Object {
+          "default": false,
+          "description": "Insert a space before functions parameters opening parenthesis",
+          "type": "boolean",
+        },
         "insertPragma": Object {
           "default": false,
           "description": "Insert @format pragma into file's first docblock comment.",

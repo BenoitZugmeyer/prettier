@@ -24,6 +24,14 @@ module.exports = {
     ]
   },
   bracketSpacing: commonOptions.bracketSpacing,
+  functionParenSpace: {
+    since: "1.14.0",
+    category: CATEGORY_JAVASCRIPT,
+    type: "boolean",
+    default: false,
+    description:
+      "Insert a space before functions parameters opening parenthesis"
+  },
   jsxBracketSameLine: {
     since: "0.17.0",
     category: CATEGORY_JAVASCRIPT,

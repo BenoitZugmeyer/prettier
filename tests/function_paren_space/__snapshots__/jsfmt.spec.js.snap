@@ -1,0 +1,133 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`function-declarations.js - flow-verify 1`] = `
+function a() {
+}
+
+function b({ foo = "1" }) {
+}
+
+function c () {
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+function a() {}
+
+function b({ foo = "1" }) {}
+
+function c() {}
+
+`;
+
+exports[`function-declarations.js - flow-verify 2`] = `
+function a() {
+}
+
+function b({ foo = "1" }) {
+}
+
+function c () {
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+function a () {}
+
+function b ({ foo = "1" }) {}
+
+function c () {}
+
+`;
+
+exports[`function-expressions.js - flow-verify 1`] = `
+var a = function() {};
+var b = function () {};
+var c = function foo() {};
+var d = function foo () {};
+var e = function foo({ hop }) {};
+var e = function foo({
+  aVeryLongNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaame
+}) {};
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+var a = function() {};
+var b = function() {};
+var c = function foo() {};
+var d = function foo() {};
+var e = function foo({ hop }) {};
+var e = function foo({
+  aVeryLongNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaame
+}) {};
+
+`;
+
+exports[`function-expressions.js - flow-verify 2`] = `
+var a = function() {};
+var b = function () {};
+var c = function foo() {};
+var d = function foo () {};
+var e = function foo({ hop }) {};
+var e = function foo({
+  aVeryLongNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaame
+}) {};
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+var a = function () {};
+var b = function () {};
+var c = function foo () {};
+var d = function foo () {};
+var e = function foo ({ hop }) {};
+var e = function foo ({
+  aVeryLongNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaame
+}) {};
+
+`;
+
+exports[`shorthands.js - flow-verify 1`] = `
+class Foo {
+  foo() {}
+  bar({ a }) {}
+  get baz() {}
+}
+
+const foo = {
+  foo() {},
+  bar({ a }) {},
+  get baz() {},
+};
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+class Foo {
+  foo() {}
+  bar({ a }) {}
+  get baz() {}
+}
+
+const foo = {
+  foo() {},
+  bar({ a }) {},
+  get baz() {}
+};
+
+`;
+
+exports[`shorthands.js - flow-verify 2`] = `
+class Foo {
+  foo() {}
+  bar({ a }) {}
+  get baz() {}
+}
+
+const foo = {
+  foo() {},
+  bar({ a }) {},
+  get baz() {},
+};
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+class Foo {
+  foo () {}
+  bar ({ a }) {}
+  get baz () {}
+}
+
+const foo = {
+  foo () {},
+  bar ({ a }) {},
+  get baz () {}
+};
+
+`;

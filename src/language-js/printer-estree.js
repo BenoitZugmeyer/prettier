@@ -3642,6 +3642,16 @@ function printFunctionParams(path, print, options, expandArg, printTypeParams) {
     ? printFunctionTypeParameters(path, options, print)
     : "";
 
+  const node = path.getNode();
+  const openingParen =
+    options.functionParenSpace &&
+    (node.type === "FunctionDeclaration" ||
+      node.type === "FunctionExpression" ||
+      node.type === "ObjectMethod" ||
+      node.type === "ClassMethod")
+      ? " ("
+      : "(";
+
   let printed = [];
   if (fun[paramsField]) {
     printed = path.map(print, paramsField);
@@ -3654,7 +3664,7 @@ function printFunctionParams(path, print, options, expandArg, printTypeParams) {
   if (printed.length === 0) {
     return concat([
       typeParams,
-      "(",
+      openingParen,
       comments.printDanglingComments(
         path,
         options,
@@ -3689,7 +3699,7 @@ function printFunctionParams(path, print, options, expandArg, printTypeParams) {
     return group(
       concat([
         removeLines(typeParams),
-        "(",
+        openingParen,
         join(", ", printed.map(removeLines)),
         ")"
       ])
@@ -3704,14 +3714,14 @@ function printFunctionParams(path, print, options, expandArg, printTypeParams) {
   //   c
   // }) {}
   if (shouldHugArguments(fun)) {
-    return concat([typeParams, "(", join(", ", printed), ")"]);
+    return concat([typeParams, openingParen, join(", ", printed), ")"]);
   }
 
   const parent = path.getParentNode();
 
   // don't break in specs, eg; `it("should maintain parens around done even when long", (done) => {})`
   if (isTestCall(parent)) {
-    return concat([typeParams, "(", join(", ", printed), ")"]);
+    return concat([typeParams, openingParen, join(", ", printed), ")"]);
   }
 
   const flowTypeAnnotations = [
@@ -3751,7 +3761,7 @@ function printFunctionParams(path, print, options, expandArg, printTypeParams) {
 
   if (isFlowShorthandWithOneArg) {
     if (options.arrowParens === "always") {
-      return concat(["(", concat(printed), ")"]);
+      return concat([openingParen, concat(printed), ")"]);
     }
     return concat(printed);
   }
@@ -3761,7 +3771,7 @@ function printFunctionParams(path, print, options, expandArg, printTypeParams) {
 
   return concat([
     typeParams,
-    "(",
+    openingParen,
     indent(concat([softline, join(concat([",", line]), printed)])),
     ifBreak(
       canHaveTrailingComma && shouldPrintComma(options, "all") ? "," : ""

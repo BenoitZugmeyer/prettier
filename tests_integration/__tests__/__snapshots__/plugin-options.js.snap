@@ -13,11 +13,11 @@ exports[` 1`] = `
     --no-bracket-spacing     Do not print spaces between brackets.
 +   --foo-option <bar|baz>   foo description
 +                            Defaults to bar.
+    --function-paren-space   Insert a space before functions parameters opening parenthesis
+                             Defaults to false.
     --jsx-bracket-same-line  Put > on the last line instead of at a new line.
                              Defaults to false.
-    --parser <flow|babylon|typescript|css|less|scss|json|json5|json-stringify|graphql|markdown|vue|yaml>
-                             Which parser to use.
-    --print-width <int>      The line length where Prettier will try wrap."
+    --parser <flow|babylon|typescript|css|less|scss|json|json5|json-stringify|graphql|markdown|vue|yaml>"
 `;
 
 exports[`show detailed external option with \`--help foo-option\` (stderr) 1`] = `""`;

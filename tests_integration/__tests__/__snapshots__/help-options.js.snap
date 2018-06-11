@@ -126,6 +126,19 @@ exports[`show detailed usage with --help find-config-path (stdout) 1`] = `
 
 exports[`show detailed usage with --help find-config-path (write) 1`] = `Array []`;
 
+exports[`show detailed usage with --help function-paren-space (stderr) 1`] = `""`;
+
+exports[`show detailed usage with --help function-paren-space (stdout) 1`] = `
+"--function-paren-space
+
+  Insert a space before functions parameters opening parenthesis
+
+Default: false
+"
+`;
+
+exports[`show detailed usage with --help function-paren-space (write) 1`] = `Array []`;
+
 exports[`show detailed usage with --help help (stderr) 1`] = `""`;
 
 exports[`show detailed usage with --help help (stdout) 1`] = `
